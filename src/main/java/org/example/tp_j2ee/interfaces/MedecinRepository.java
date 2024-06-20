@@ -1,2 +1,4 @@
-package org.example.tp_j2ee.interfaces;public class MedecinRepository {
+package org.example.tp_j2ee.interfaces;
+
+public class MedecinRepository {
 }
