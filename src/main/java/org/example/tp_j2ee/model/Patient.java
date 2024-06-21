@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -21,6 +23,7 @@ public class Patient {
     private String prenom ;
     private LocalDate dateDeNaissance;
     private String urlPhoto;
+    private List<Consultation> consultations;
 
 
 

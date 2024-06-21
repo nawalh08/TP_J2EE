@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Data
 @Entity
 @AllArgsConstructor
@@ -16,16 +18,18 @@ import java.time.LocalDate;
 public class Consultation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
     private LocalDate dateConsultation;
     private String nomMedecin;
-    private String prescription;
+    private List<Prescription> prescription;
+    private List<FicheSoins> ficheSoins;
 
-    public Long getId() {
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -45,22 +49,20 @@ public class Consultation {
         this.nomMedecin = nomMedecin;
     }
 
-    public String getPrescription() {
+    public List<Prescription> getPrescription() {
         return prescription;
     }
 
-    public void setPrescription(String prescription) {
+    public void setPrescription(List<Prescription> prescription) {
         this.prescription = prescription;
     }
 
-    @Override
-    public String toString() {
-        return "Consultation{" +
-                "id=" + id +
-                ", dateConsultation=" + dateConsultation +
-                ", nomMedecin='" + nomMedecin + '\'' +
-                ", prescription='" + prescription + '\'' +
-                '}';
+    public List<FicheSoins> getFicheSoins() {
+        return ficheSoins;
+    }
+
+    public void setFicheSoins(List<FicheSoins> ficheSoins) {
+        this.ficheSoins = ficheSoins;
     }
 }
 

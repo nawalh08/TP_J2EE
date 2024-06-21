@@ -48,5 +48,6 @@ public class AjoutPatient extends HttpServlet {
         Patient patient = Patient.builder().nom(nom).prenom(prenom).dateDeNaissance(dataDeNaissance).urlPhoto(
         req.getContextPath()+"/image/"+fileName).build();
         patientService.create(patient);
+
     }
 }
